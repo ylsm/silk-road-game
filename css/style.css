@@ -1,0 +1,760 @@
+html, body {
+	text-align:center;
+	height:100%;
+	overflow:hidden;
+}
+
+body {
+	background-color: #870404;
+	background-image: url('../img/ui/bg.png');
+	background-image:url('../img/ui/bg.png'), -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.25, rgb(77,2,5)),
+	color-stop(0.75, rgb(135,4,4))
+	);
+}
+
+#container1 {
+	display: table;
+	width:100%;
+	height:100%;
+	overflow:hidden;
+}
+
+#container2 {
+	display:table-cell;
+	vertical-align:middle;
+	overflow:hidden;
+}
+
+#container3 {
+	display:inline-block;
+	position:relative;
+	text-align:left;
+	width:800px;
+	height:600px;
+
+	border-width: 10px;
+	border-style: ridge;
+	border-color:#EDCE00;
+	overflow:hidden;
+}
+
+#game {
+	background-color:black;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	width:800px;
+	height:600px;
+	overflow:hidden;
+}
+
+#clickable {
+	width:800px;
+	height:600px;
+	position:absolute;
+	top:0px;
+	overflow:hidden;
+}
+
+#title-screen {
+	text-align:center;
+	padding:10px;
+	background:url('../img/title/title.png');
+	width:100%;
+	height:100%;
+
+	animation: title 20s linear infinite;
+	-webkit-animation: title 20s linear infinite;
+	-moz-animation: title 20s linear infinite;
+}
+
+@keyframes title {
+	0% { background-position:-1658px 0; }
+	100% { background-position: 0px 0px; }
+}
+
+@-webkit-keyframes title {
+	0% { background-position:-1658px 0; }
+	100% { background-position: 0px 0px; }
+}
+
+@-moz-keyframes title {
+	0% { background-position:-1658px 0; }
+	100% { background-position: 0px 0px; }
+}
+
+#title-screen h1 {	
+	background:url('../img/title/logo.png') no-repeat;
+	width:500px;
+	height:200px;
+	text-indent: -9999px;
+}
+
+#title-screen button, .end-roll button {
+	padding:15px;
+	margin:0;
+	
+	border-style:groove;
+	border-color:#ffd200;
+	border-width: 10px;
+
+	background-color: orange;
+	background-image:url('../img/ui/bg_box.png');
+	font: 2em Georgia;
+	color: white;
+}
+
+#title-screen button:hover, .end-roll button:hover {
+	background-color:red;
+}
+
+#title-screen button:active, .end-roll button:active {
+	font-weight:bold;
+}
+
+#title-screen #caravan {
+	position:absolute;
+	bottom: 10px;
+	right: 10px;
+}
+
+
+#title-screen #caravan  div{
+	float:right;
+	position:relative;
+}
+
+#title-screen #caravan  .package{
+	position:absolute;
+	top:20%;
+	left:40%
+}
+
+#name-input {
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+	top: 2em;
+	width:300px;
+
+	background-color:orange;
+	background-image:url('../img/ui/bg_box.png');
+	border-style:ridge;
+	border-color:#F5E400;
+	border-radius:15px;
+
+	font: 1.2em Georgia;
+	color:white;
+	text-align:center;
+}
+
+.store {
+	position:absolute;
+	top: 50px;
+	left: 250px;
+	width: 500px;
+
+	background-color:orange;
+	background-image:url('../img/ui/bg_box.png');
+	border-style:ridge;
+	border-color:#F5E400;
+	border-radius:15px;
+
+	font: 1.2em Georgia;
+	color:white;
+	text-align:center;
+	z-index:200;
+}
+
+.store table {
+	width:100%;
+}
+
+.store img {
+	width:25px;
+	height:25px;
+	z-index:200;
+}
+
+.store input {
+	width: 2em;
+	height: 1.5em;
+	font: 1em Georgia;
+	color:white;
+	background:none;
+	border:0;
+	text-align:center;
+}
+
+.store #buy-sell {
+	font: 1em Georgia;
+	color:white;
+	background-image:url('../img/ui/bg_box.png');
+	background-color:#770a0f;
+	border-style:groove;
+	border-width: 5px;
+	padding:10px;
+	border-color:#ffde00;
+}
+
+.store #buy-sell:hover {
+	font-weight:bold;
+}
+
+.store td button {
+	color:white;
+	background-color:#770a0f;
+}
+
+.shop-character {
+	position:absolute;
+	bottom:0;
+	left:-100px;
+}
+
+.speech-bubble {
+	background-image: url('../img/ui/speech_bubble_hor.png');
+	width: 380px;
+	height: 110px;
+	padding: 70px 60px 100px 60px;
+	position: absolute;
+	top: 250px;
+	left: 250px;
+	font: 1em Georgia;
+	text-align:center;
+}
+
+.back-button {
+	z-index:200;
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	
+	font: 1.5em Georgia;
+	color:white;
+	background-image:url('../img/ui/bg_box.png');
+	background-color:#770a0f;
+	border-style:groove;
+	border-width: 5px;
+	padding:10px;
+	border-color:#ffde00;
+}
+
+.back-button:hover {
+	font-weight:bold;
+}
+
+.dark-overlay {
+	position:absolute;
+	top:0;
+	width:100%;
+	height:100%;
+	background-color:rgba(0, 0, 0, 0.5);
+	z-index:200;
+	overflow:hidden;
+}
+
+.inventory {
+	margin-top:15px;
+	margin-left:auto;
+	margin-right:auto;
+	width:750px;
+	height:550px;
+	text-align:center;
+	background-image: url('../img/ui/bg_paper.jpg');
+	padding:10px;
+	box-shadow: 1px 1px 5px;
+	font: 1.2em Georgia;
+	
+}
+
+.inventory button, .city-initial button {
+	font: 1em Georgia;
+	color:white;
+	background-image:url('../img/ui/bg_box.png');
+	background-color:#770a0f;
+	border-style:groove;
+	border-width: 5px;
+	padding:10px;
+	border-color:#ffde00;
+}
+
+.inventory button:hover, .city-initial button:hover {
+	font-weight:bold;
+}
+
+.inventory-col {
+	width:50%;
+	float:left;
+}
+
+.inventory table {
+	width:95%;
+	text-align:left;
+	color:black;
+	border-spacing:0;
+	margin-bottom:20px;
+}
+
+.inventory tr:nth-child(even) {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.inventory h1 {
+	font: 1em Georgia;
+	font-weight:bold;
+	text-align:left;
+	margin:0;
+}
+
+.inventory li {
+	text-align:left;
+}
+
+.inventory #map {
+	width:350px;
+	height:200px;
+	background-image:url('../img/items/dummy.png');
+	border-radius:15px;
+	border-style:ridge;
+	border-color:#F5E400;
+	margin-bottom:20px;
+}
+
+.inventory #caravan {
+	width:350px;
+	height:150px;
+	margin-bottom:20px;
+}
+
+.inventory .horse {
+	background-image:url('../img/travel/horse_stand.gif');
+	background-size:100% 100%;
+	width:50px;
+	height:41px;
+	float:left;
+	position:relative;
+}
+
+.inventory .camel {
+	background-image:url('../img/travel/camel_stand.gif');
+	background-size:100% 100%;
+	width:50px;
+	height:41px;
+	float:left;
+	position:relative;
+}
+
+.inventory *[class*='package-'] {
+	width:15px;
+	height:13px;
+	position:absolute;
+	left: 40%;
+}
+
+.inventory .package-0 {
+	top: 20%;
+}
+
+.inventory .package-1 {
+	top: 10%;
+}
+
+.inventory .package-2 {
+	top: 0%;
+}
+
+.item-detail {
+	position:absolute;
+	top: 10px;
+	left: 10px;
+	z-index:300;
+	background-image:url('../img/ui/bg_paper.jpg');
+	box-shadow: 1px 1px 5px;
+	padding:5px;
+	font: 1em Georgia;
+	width: 350px;
+	text-align:center;
+}
+
+#log {
+	overflow-y: scroll;
+}
+
+#log button {
+	position: absolute;
+	bottom:20px;
+	right:40px;
+}
+
+#moving {
+	width:100%;
+	height: 300px;
+	background-image:url('../img/travel/mountains.png');
+	margin-top: 50px;
+	transition: background-position 2s;
+	-webkit-transition: background-position 2s;
+	-moz-transition: background-position 2s;
+}
+
+.moving-to {
+	background-position: 100% 0%;
+}
+
+.moving-reverse {
+	background-position: 0% 0%;
+}
+
+#moving .horse {
+	background-image:url('../img/travel/horse_trot.gif');
+	background-size:100% 100%;
+	width:70px;
+	height:58px;
+	position:relative;
+	margin-top:200px;
+}
+
+.moving-to .horse {
+	float:right;
+}
+
+.moving-reverse .horse {
+	float:left;
+	-moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+#moving .camel {
+	background-image:url('../img/travel/camel_trot.gif');
+	background-size:100% 100%;
+	width:70px;
+	height:58px;
+	position:relative;
+	margin-top:200px;
+}
+
+.moving-to .camel {
+	float:right;
+}
+
+.moving-reverse .camel {
+	float:left;
+	-moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+#moving *[class*='package-'] {
+	width:25px;
+	height:22px;
+	position:absolute;
+	left: 40%;
+}
+
+#moving .package-0 {
+	top: 20%;
+}
+
+#moving .package-1 {
+	top: 10%;
+}
+
+#moving .package-2 {
+	top: 0%;
+}
+
+#moving .person {
+	background-image:url('../img/travel/person_walking.gif');
+	background-size:100% 100%;
+	width:22px;
+	height:58px;
+	position:relative;
+	margin-top:200px;
+}
+
+.moving-to .person {
+	float:right;
+}
+
+.moving-reverse .person {
+	float:left;
+	-moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+#moving .sick-cloud {
+	background-image:url('../img/travel/person_sick_cloud.png');
+	background-size:100% 100%;
+	width: 22px;
+	height: 21px;
+	position:relative;
+	top: 7px;
+}
+
+.list-of-items img {
+	width:25px;
+	height:25px;
+}
+
+#info {
+	color:white;
+	font: 1.2em Courier;
+	position:relative;
+	left: 300px;
+}
+
+.event {
+	width:500px;
+	padding: 20px;
+	position:absolute;
+	top: 100px;
+	left: 140px;
+	background-image:url('../img/ui/bg_paper.jpg');
+	box-shadow: 1px 1px 5px;
+	text-align:center;
+	font: 1em Georgia;
+	z-index:100;
+}
+
+.event button {
+	font: 1em Georgia;
+	color:white;
+	background-image:url('../img/ui/bg_box.png');
+	background-color:teal;
+	border-style:groove;
+	border-width: 5px;
+	padding:10px;
+	border-color:#ffde00;
+}
+
+.event button:hover {
+	font-weight:bold;
+}
+
+.quiz-character {
+	position:absolute;
+	right:0;
+	bottom:0;
+}
+
+.quiz-bubble {
+	background-image: url('../img/ui/speech_bubble_ver.png');
+	position:absolute;
+	top:0;
+	left:0;
+	width:301px;
+	height:462px;
+	padding: 30px 115px 30px 30px;
+	
+	font: 1em Georgia;
+}
+
+/* constant screen things */
+#inventory-button {
+	position: absolute;
+	bottom:0px;
+	right:0px;
+	z-index:100;
+	width:200px;
+	height:141px;
+	border:0;
+	background-color:transparent;
+	background-image:url('../img/ui/inventory.png');
+	line-height:0;
+	font-size:0;
+}
+
+#inventory-button:hover{
+	background-image:url('../img/ui/inventory_mouseover.png');
+}
+
+#distance {
+	position:absolute;
+	margin-left:0.5em;
+	margin-top:0.5em;
+	padding:5px;
+	background-color:teal;
+	border-style:ridge;
+	border-color:#F5E400;
+	border-radius:15px;
+	width:200px;
+	font:1.3em Georgia;
+	color:white;
+}
+
+#days-left {
+	position:absolute;
+	right:0.5em;
+	margin-top:0.5em;
+	padding:5px;
+	background-color:teal;
+	border-style:ridge;
+	border-color:#F5E400;
+	border-radius:15px;
+	width:200px;
+
+	font:1.3em Georgia;
+	color:white;
+}
+
+#travel-button, #finish-button {
+	position: absolute;
+	bottom: 220px;
+	left: 320px;
+	z-index:100;
+	font-size:1em;
+}
+
+/* city introductions */
+.city-initial {
+	margin-top: 9em;
+	margin-left: auto;
+	margin-right: auto;
+	width:500px;
+	padding: 20px;
+
+	background-image:url('../img/ui/bg_paper.jpg');
+	box-shadow: 1px 1px 5px;
+
+	text-align:center;
+}
+
+.city-welcome-to {
+	font: 0.7em Arial;
+	text-transform:uppercase;
+	letter-spacing:5px;
+}
+
+.city-name {
+	margin: 0;
+	font: 4.5em Georgia;
+	font-variant:small-caps;
+}
+
+.city-population {
+	margin-top:0;
+	font: 0.7em Arial;
+	text-transform:uppercase;
+}
+
+.city-desc {
+	font: 1em Georgia;
+}
+
+/* map */
+.city-map {
+	position:absolute;
+	width: 800px;
+	height: 600px;
+
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+}
+
+.city-map button {
+	font: 1.5em Georgia;
+	color:white;
+	background-color:orange;
+	background-image:url('../img/ui/bg_box.png');
+	border-style:groove;
+	border-width: 5px;
+	padding:10px;
+	border-color:#ffde00;
+}
+
+.city-map button:hover {
+	font-weight:bold;
+}
+
+.city-map h1 {
+	background-color:teal;
+	border-style:ridge;
+	border-color:#F5E400;
+	border-radius:15px;
+	display:inline;
+	position:relative;
+	padding:5px;
+	top: 10px;
+	left:10px;
+	font-size:2em;
+	color:white;
+}
+
+/* monuments */
+.monument-title {
+	background-color:teal;
+	border-style:ridge;
+	border-color:#F5E400;
+	border-radius:15px;
+	display:inline;
+	position:relative;
+	padding:5px;
+	top: 10px;
+	left:10px;
+	font-size:2em;
+	color:white;
+	margin: 0;
+	font: 4em Georgia;
+	font-variant:small-caps;
+}
+
+.monument-description {
+	background-color:orange;
+	background-image:url('../img/ui/bg_box.png');
+	border-style:ridge;
+	border-color:#F5E400;
+	border-radius:15px;
+	position:absolute;
+	bottom: 75px;
+	left: 5%;
+	width: 90%;
+	font-family:Georgia;
+	padding: 10px;
+}
+
+/* ending */
+.end-roll {
+	color:white;
+	font: 1.5em Georgia;
+	width:100%;
+	position:absolute;
+	top:600px;
+	text-align:center;
+	transition: top 10s linear;
+	-webkit-transition: top 10s linear;
+	-moz-transition: top 10s linear;
+}
+
+.end-roll ul {
+	list-style:none;
+}
+
+.end-roll h1 {
+	font: 2em Georgia;
+}
+
+/* loading screen */
+#loading {
+    margin: auto;
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    width: 200px;
+    height: 200px;
+    color:white;
+    font: italic 2em Georgia;
+    text-align: center;
+}
